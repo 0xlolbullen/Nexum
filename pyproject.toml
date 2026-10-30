@@ -67,6 +67,20 @@ packages = ["nexum"]
 module = ["tests.*"]
 disallow_untyped_defs = false
 
+[tool.coverage.run]
+source = ["src/nexum"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+]
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
